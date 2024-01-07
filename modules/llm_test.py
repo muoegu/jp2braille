@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-os.environ['API_KEY']
+os.environ['OPENAI_API_KEY']
 
 output_parser = CommaSeparatedListOutputParser()
 
