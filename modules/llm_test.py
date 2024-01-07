@@ -4,8 +4,11 @@ from langchain import PromptTemplate
 from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
 import os
+from dotenv import load_dotenv
 
-os.environ["OPENAI_API_KEY"] = "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"
+load_dotenv()
+
+os.environ['API_KEY']
 
 output_parser = CommaSeparatedListOutputParser()
 
