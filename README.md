@@ -21,7 +21,7 @@ Website: https://anlp.jp/nlp2024/index.html (都是日文....)
 
 
 
-- 2024年1月12日（五）下午3時
+- Deadline: 2024年1月12日（五）下午3時
 
 - Manuscripts should not exceed 4 pages for the main text and 5 pages for the main text, acknowledgements, and references. In addition to the main text, acknowledgments, and references, one page of Appendix may be added. In other words, you can submit a manuscript of up to 6 pages.
 

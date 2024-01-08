@@ -1,6 +1,5 @@
 <!-- Please install VScode extension called "Markdown Mind Map Preview" (https://marketplace.visualstudio.com/items?itemName=josephcz.vscode-markdown-mindmap-preview) -->
 
-
 # Japanese Braille Translator with LLM
 
 ## Concept
@@ -18,10 +17,18 @@
 - Kanji often has multiple reading
 	- On-reading
 		- From Chinese
+		- 日(hi)
 	- Kun-reading
 		- Japan
+		- 日(nichi)
+	- Poliphone?
+		- 今日(kyou)
+			- today
+		- 今日(konnnichi)
+			- Recently
 - braille
 	- Needs to kanji->yomi conversion
+		- Not care in other services
 	- Volunteer
 		- Sapie Library
 		- Time-consuming
@@ -36,43 +43,41 @@
 	- Language Learners
 	- Voice over
 
-## Difficulties?
-
-### On-kun
-
-## Research
+## Related work
 
 ### Kanji->Yomi
 - machine learning
 	- That's surely more accurate
 	- Requires extensive training data
 
-### Value
-- LLM’s possibility 
-	- 
+### contributions
+- LLM’s potensial 
 
 ### braille
+- outliine
+- Rule-based approach
+- Machine learning-based approach
+- LLM-based approach
 
-## Braille translation
+### ML->LLM
 
-### Mecab
-- Morphological analysis tool
-	- like spaCy 
-- Can get Yomi info
-	- Phonological reading
-	- は（ha, wa）へ（he, e）
-
-### [点字自動翻訳 on the web](http://muzik.gr.jp/tenji/conv_tenji.asp)
-
-
-### chatGPT
-- GPT3.5
-- GPT4
-
-### liblouis
-- Rule base
-
-### Paid apps or services
+### Current approach
+- Braille translation
+	- Mecab
+		- Morphological analysis tool
+			- like spaCy 
+		- Can get Yomi info
+			- Phonological reading
+			- は（ha, wa）へ（he, e）
+	- [点字自動翻訳 on the web](http://muzik.gr.jp/tenji/conv_tenji.asp)
+		- Use 
+	- chatGPT
+		- GPT3.5
+		- GPT4
+	- liblouis
+		- Rule base
+	- Paid apps or services
+	- Example not caring Yomi problem
 
 ## My project
 
@@ -82,6 +87,11 @@
 
 ### Let LLM decide
 
+### ChatGPT API
+
+### Contribusion?
+- Potential of combining LLM and other resource(dictionary?)
+
 ## Pipeline
 
 ### Preprocessing
@@ -90,6 +100,9 @@
 		- Too much prompt
 	- Future: use of multiple sentences
 - Morphological analysis
+	- tokenization
+		- Split into chunks
+			- Easy to analyze
 	- Mecab
 		- get basic Yomi
 			- how accurate?
@@ -98,9 +111,7 @@
 				- Phonological change
 			- POS
 				-  later?
-	- tokenization
-		- Split into chunks
-			- Easy to analyze
+	- [KyTea](https://www.phontron.com/kytea/)
 - Check if its contains Kanji
 	- input
 		- Morphological analysed data
@@ -144,7 +155,7 @@
 		- Original text
 		- ambiguous chunks
 		- Dictionary info
-	- open AI API
+	- Prompt templates by Langchain
 		- prompting
 			- design
 				- data
@@ -160,12 +171,14 @@
 				- Need to 
 					- Contains lots of info
 					- But simple, smaller tokens
+		- open AI API
 	- Output purser
 		- Let them only output list
 			- Use this list afterword
 		- Didn’t work well
 		- Out put
 			- Readings of Ambiguous chunks(list)
+	- 
 
 ### Implementation
 - Update kana data for input data
@@ -208,13 +221,25 @@
 	- Preprocessing
 		- Add Kana_answer
 	- streamlit
-		- Input CSV
-		- CSV to Pandas Dataframe
-			- test_texts
-				- Change name
-				- Text data
-			- target_words
-				- Change name
+		- Evaluation
+			- Input CSV
+			- CSV to Pandas Dataframe
+				- test_texts
+					- Change name
+					- Text data
+				- target_words
+					- Change name
+			- Test
+				- Select test type
+					- Mecab
+					- GPT 3.5
+					- GPT 4
+					- Mecab + GPT
+				- Run test
+				- Compare target words
+					- Whether it contains or not
+					- Can edit the result
+				- Get accuracy rate
 
 ### Comparison
 - Mecab
@@ -231,56 +256,18 @@
 	- hallucination
 - Yomi -GPT
 	- better?
+- JP Retrained model?
+- Liblous?
 
-## Limitation
+## Conclusion and Future Work
 
-### The more inputs there are
-- the more expensive
-- the more time
+### Conclusion
+- recap this reserch
 
-### Spacing
-- Accuracy↓
-
-### Another models
-
-# Final presentation
-
-## project overview
-
-## motivation
-
-### What kind of problem?
-
-## explain basic rules
-
-### 
-
-## reserch  method
-
-## pipline
-
-## result
-
-### 
-
-## demo
-
-### Just convert to hiragana part
-
-### Streamlit deploy
-
-## Demo app
-
-### streamlit
-
-### pagenation
-- main
-	- translation
-- converter plus
-	- Especially for conversion
-- test
-	- Perform test
-		- mecab
-		- chatGPT
-		- 
-	- comparison
+### Limitation
+- The more inputs there are
+	- the more expensive
+	- the more time
+- Spacing
+	- Accuracy↓
+- Another models
