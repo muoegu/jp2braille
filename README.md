@@ -44,3 +44,6 @@ Our paper is planned to be written in English. Although many papers submitted to
 - [Cross-stitching Text and Knowledge Graph Encoders for Distantly Supervised Relation Extraction](https://www.anlp.jp/proceedings/annual_meeting/2023/pdf_dir/B3-2.pdf)
 
 - [Controlling Text Generation with Fiction-Writing Modes](https://www.anlp.jp/proceedings/annual_meeting/2023/pdf_dir/H3-4.pdf)
+
+
+All papers accepted at the conference last year: https://www.anlp.jp/proceedings/annual_meeting/2023/index.html#general
