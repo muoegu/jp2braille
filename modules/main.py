@@ -4,9 +4,10 @@ from .test_mecab import mecab_test
 from .only_kanji import only_kanji
 from .filter_ambiguous import filter_ambiguous
 from .get_dict_entry import get_dictionary_entries
-from .llm_test import llm_test
+from .new_llm import llm_test2
 from .hira2kana import hira2kana
 
+from .template import create_templeate
 
 
 def split22lists(filtered_list):
@@ -94,9 +95,11 @@ def all_process(input_text, df):#,context
     filtered_kanji = filter_ambiguous(only_kanji_r)
     indices, filtered_kanji = split22lists(filtered_kanji)
     jisho_data = get_jisho_data(filtered_kanji)
-    llm_result, prompt_text = llm_test(input_text, filtered_kanji, jisho_data)#,context
-    katakana_words = hira2kana(llm_result)
-    indexed_result = add_index(indices, katakana_words)
+    # llm_result, prompt_text = llm_test(input_text, filtered_kanji, jisho_data)#,context
+    template_result = create_templeate(input_text, filtered_kanji, jisho_data)
+    llm_result = llm_test2(template_result)
+    # katakana_words = hira2kana(llm_result)
+    indexed_result = add_index(indices, llm_result)
     updated_list = update_phonetic(mecab_result, indexed_result)
     yomi_result = get_yomi(updated_list)
     braille_dict = create_braille_dict(df)
