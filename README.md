@@ -1,5 +1,8 @@
 # Exploring the Potential of Prompt-Based Method for Kanji-Kana Conversion in Japanese Braille Translation
-This is a github repositry  for Japanese auto braille project.
+
+Micah Kitsunai, Deborah Watty, Shu-Kai Hsieh (Graduate Institute of Linguistics, National Taiwan University)
+
+> This is a github repositry  for Japanese auto braille project.
 
 ### Streamlit Demo Site
 ```markdown
